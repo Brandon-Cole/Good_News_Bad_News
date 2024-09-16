@@ -71,7 +71,11 @@
 
 Here's my BIOS611 Project
 
+I build my container with:
+docker build . -t GNBN
 
+Run container with:
+docker run -p 8787:8787 -it --rm -e PASSWORD=mypassword GNBN
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
