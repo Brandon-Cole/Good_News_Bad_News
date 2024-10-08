@@ -79,17 +79,16 @@ Good News Bad News (GNBN) is a natural language processing project intended to i
 
 ### Built With
 
-* [![Docker][Docker]][Docker-url]
-* [![Python][Python]][Python-url]
-* [![PyTorch][PyTorch]][PyTorch-url]
-* [![scikit-learn][scikit-learn]][scikit-learn-url]
-* [![TensorFlow][TensorFlow]][TensorFlow-url]
-* [![Pandas][Pandas]][Pandas-url]
-* [![NumPy][NumPy]][NumPy-url]
-* [![Matplotlib][Matplotlib]][Matplotlib-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<ul>
+  <li><a href="https://www.docker.com/" target="_blank"><img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></a></li>
+  <li><a href="https://www.python.org/" target="_blank"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python"></a></li>
+  <li><a href="https://pytorch.org/" target="_blank"><img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch"></a></li>
+  <li><a href="https://scikit-learn.org/" target="_blank"><img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn"></a></li>
+  <li><a href="https://www.tensorflow.org/" target="_blank"><img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white" alt="TensorFlow"></a></li>
+  <li><a href="https://pandas.pydata.org/" target="_blank"><img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"></a></li>
+  <li><a href="https://numpy.org/" target="_blank"><img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"></a></li>
+  <li><a href="https://matplotlib.org/" target="_blank"><img src="https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black" alt="Matplotlib"></a></li>
+</ul>
 
 
 <!-- GETTING STARTED -->
