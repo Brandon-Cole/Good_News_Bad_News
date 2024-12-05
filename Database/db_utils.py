@@ -41,7 +41,7 @@ class Database:
             A list of tuples, where each tuple contains a row of data to insert into the table.
         """
         placeholders = ', '.join(['?'] * len(data[0]))
-        sql = f"INSERT INTO {table} VALUES ({placeholders})"
+        sql = f"INSERT OR IGNORE INTO {table} VALUES ({placeholders})"
         self.cursor.executemany(sql, data)
         self.connect.commit()
 
