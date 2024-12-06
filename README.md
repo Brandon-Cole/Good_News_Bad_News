@@ -6,7 +6,6 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -74,15 +73,21 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
+Clone the repo using:
+
+```sh
+git@github.com:Brandon-Cole/Good_News_Bad_News.git
+```
+
 I built my container with:
 
   ```sh
-docker build . -t GNBN
+docker build . -t gnbn
 ```
 
 Run container with:
  ```sh
-docker run -p 8787:8787 -it --rm -e PASSWORD=mypassword GNBN
+docker run -it -v "$(pwd):/work" --name gnbn gnbn /bin/bash
 ```
 
 <!-- USAGE EXAMPLES -->
@@ -99,21 +104,10 @@ _To directly view the analytical report please visit [Web Report](https://brando
 <!-- ROADMAP -->
 ## Future Directions
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
+- [ ] More data with more broad year coverage (Lots of news behind paywall)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
