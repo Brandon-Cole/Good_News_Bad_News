@@ -90,6 +90,12 @@ Run container with:
 docker run -it -v "$(pwd):/work" --name gnbn gnbn /bin/bash
 ```
 
+Create report and conduct analysis using
+ ```sh
+cd work
+make all
+```
+
 <!-- USAGE EXAMPLES -->
 ## Reproducibility
 

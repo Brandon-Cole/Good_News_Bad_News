@@ -39,7 +39,11 @@ data = {
 
         {
             "heading": "Visual Insights",
-            "text": "Here we examine the distribution of news sources in the dataset (Figure 1) and visualize trends in headline embeddings (Figure 2). We further investigated the average pairwise Euclidean distance between headlines by source (Figure 3).",
+            "text": "Here we examine the distribution of news sources in the dataset (Figure 1) and visualize trends in headline embeddings (Figure 2). We further investigated the average pairwise Euclidean distance between headlines by source (Figure 3). The same methodology was applied to article summaries to explore the distribution and average distances (Figure 4 and Figure 5). Finally, we examined the overall distribution of distances between headline and summary embeddings across sources (Figure 6) and performed a statistical comparison of distributions using a Student's t-test (Figure 7)."
+            "Our data shows that Tass and China Daily appear to have the lowest spread when it comes to the content and style of their headlines and news articles. Spotchecking the interactive visualization, it appears to be related to mentioning of the respective home country of the news publication, often in the context of foreign relations."
+            "However, this is an analysis of content from a specific time period and may not be representative of the news sources today."
+            "We can also see that most sources have a similar relationship between content and headlines. However, the sources with the largest difference were"
+            " dw, cnn, and china daily.",
             "figures": [
                 {
                     "type": "image",
@@ -55,15 +59,34 @@ data = {
                     "type": "image",
                     "src": "../plots/headline_embeddings_source_spread.png",
                     "caption": "Figure 3: Average Pairwise Euclidean Distance Between Headlines By Source."
+                },
+                {
+                    "type": "html",
+                    "html": "<iframe src='../plots/summary_embeddings_tsne_clusters.html'></iframe>",
+                    "caption": "Figure 4: Interactive Visualization of News Article Content."
+                },
+                {
+                    "type": "image",
+                    "src": "../plots/summary_embeddings_source_spread.png",
+                    "caption": "Figure 5: Average Pairwise Euclidean Distance Between Article Content By Source."
+                },
+                {
+                    "type": "image",
+                    "src": "../plots/headline_summary_distance_distribution.png",
+                    "caption": "Figure 6: Distribution of Distances Between Headline and Summary Embeddings by Source."
+                },
+                {
+                    "type": "html",
+                    "html": "<iframe src='../plots/t_test_results.html'></iframe>",
+                    "caption": "Figure 7: Analysis of Distributions using student's t-test."
                 }
+
             ]
         },
         {
             "heading": "References",
             "text": """
             1. Mousoulidou, M., Taxitari, L., & Christodoulou, A. (2024). Social Media News Headlines and Their Influence on Well-Being: Emotional States, Emotion Regulation, and Resilience. European journal of investigation in health, psychology and education, 14(6), 1647–1665. https://doi.org/10.3390/ejihpe14060109<br>
-            2. News Source 2<br>
-            3. News Source 3
             """,
             "figures": []
         }

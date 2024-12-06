@@ -1,6 +1,8 @@
 from db_utils import Database
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
+import pickle
 
 harvard_data = pd.read_csv('../data/NewsArticles.csv')
 harvard_data = harvard_data.iloc[:, :6]
@@ -19,6 +21,10 @@ def source_from_link(link):
 harvard_data['source'] = harvard_data['article_source_link'].apply(source_from_link)
 
 embedding_data = pd.read_csv('../data/headlines_with_embeddings.csv')
+
+summary_data = pd.read_csv('../data/articles_summarized_IDs.csv')
+
+summary_embedding_data = pd.read_csv('../data/articles_summarized_IDs_embeddings.csv')
 
 plt.figure(figsize=(12, 6))
 harvard_data['source'].value_counts().plot(kind='bar', color='lightgreen', width=0.8)
@@ -51,6 +57,19 @@ db.create_table('headlines', """
     embedding BLOB
 """)
 
+db.create_table('summaries', """
+    summary_ID INTEGER PRIMARY KEY,
+    article_ID INTEGER,
+    summary TEXT,
+    FOREIGN KEY (article_ID) REFERENCES articles (article_id)
+""")
+
+db.create_table('summary_embeddings', """
+    summary_ID INTEGER PRIMARY KEY,
+    embedding BLOB,
+    FOREIGN KEY (summary_ID) REFERENCES summaries (summary_ID)
+""")
+
 
 article_data = [
     (row['article_id'], row['publish_date'], row['source'], row['text'])
@@ -68,8 +87,21 @@ for _, row in harvard_data.iterrows():
     if not embedding_row.empty:
         headline_data.append((row['article_id'], row['title'], row['subtitle'], embedding_row.values[0]))
 
+summary_data = [
+    (row['summary_ID'], row['article_id'], row['summary'])
+    for _, row in summary_data.iterrows()
+]
+
+#handle similar to headline data which just used values[0], dont use pickle
+summary_embedding_data_serialized = [
+    (row['summary_ID'], row['embedding'])
+    for _, row in summary_embedding_data.iterrows()
+]
+    
+
 db.insert_data('articles', article_data)
 db.insert_data('sources', source_data)
 db.insert_data('headlines', headline_data)
-
+db.insert_data('summaries', summary_data)
+db.insert_data('summary_embeddings', summary_embedding_data_serialized)
 db.close()
