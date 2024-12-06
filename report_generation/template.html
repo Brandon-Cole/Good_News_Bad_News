@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: "Georgia", "Times New Roman", Times, serif;
+            background-color: #fff;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            color: #222;
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        header h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            font-weight: 400;
+            font-style: italic;
+        }
+        .date {
+            font-size: 1em;
+            color: #555;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .section p {
+            margin: 15px 0;
+            text-align: justify;
+        }
+        .figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .figure img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background: #f9f9f9;
+        }
+        .html-figure iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+        }
+        footer {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            background: #f9f9f9;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            color: #555;
+        }
+        /* Fancy Margins */
+        body::before, body::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 30px;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+        <h2>{{ subtitle }}</h2>
+        <p class="date">{{ date }}</p>
+    </header>
+
+    <div class="container">
+        {% for section in sections %}
+        <div class="section">
+            <h2>{{ section.heading }}</h2>
+            <p>{{ section.text | safe }}</p>
+    
+            {% if section.figures %}
+                {% for figure in section.figures %}
+                <div class="figure">
+                    <h3>{{ figure.caption }}</h3>
+                    {% if figure.type == "image" %}
+                    <img src="{{ figure.src }}" alt="{{ figure.caption }}">
+                    {% elif figure.type == "html" %}
+                    <div class="html-figure">{{ figure.html | safe }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    
+    <footer>
+        <p>Generated on {{ date }}</p>
+    </footer>
+</body>
+</html>
