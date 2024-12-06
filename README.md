@@ -35,15 +35,6 @@
 </p>
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-Good News Bad News (GNBN) is a natural language processing project aimed at exploring patterns in news headlines and the extent of bias they introduce.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <div align="center">
   <h3>Built With</h3>
   <a href="https://www.docker.com/" target="_blank">
@@ -99,7 +90,7 @@ docker run -p 8787:8787 -it --rm -e PASSWORD=mypassword GNBN
 
 To perform the analysis shown here, you can run the Makefile provided which should assemble the report and database. I have also included the LLM scripts which were run on a HPC cluster due to resource limitations.
 
-_To directly view the analytical report please visit [Report](https://example.com)_
+_To directly view the analytical report please visit [Web Report](https://brandon-cole.github.io/Good_News_Bad_News/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,31 +107,6 @@ _To directly view the analytical report please visit [Report](https://example.co
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Contributors:
-
-<a href="https://github.com/Brandon-Cole/Good_News_Bad_News/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=github_username/repo_name" alt="contrib.rocks image" />
-</a>
-
-
-
 <!-- LICENSE -->
 ## License
 
@@ -155,7 +121,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Brandon Novy - [@Linkedin](https://www.linkedin.com/in/brandon-novy-5a4227263/) - novy@unc.edu
 
-Project Link: [https://github.com/Brandon-Cole/Good_News_Bad_News](https://github.com/Brandon-Cole/Good_News_Bad_News)
+Web Link: [https://github.com/Brandon-Cole/Good_News_Bad_News](https://brandon-cole.github.io/Good_News_Bad_News/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -164,9 +130,7 @@ Project Link: [https://github.com/Brandon-Cole/Good_News_Bad_News](https://githu
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* Dr. Vincent Toups for his guidance and support
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
