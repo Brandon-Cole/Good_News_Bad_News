@@ -20,12 +20,12 @@ harvard_data['source'] = harvard_data['article_source_link'].apply(source_from_l
 
 embedding_data = pd.read_csv('../data/headlines_with_embeddings.csv')
 
-plt.figure(figsize=(14, 10))
-harvard_data['source'].value_counts().plot(kind='bar', color='lightgreen')
-plt.title('News Source Distribution', fontsize=20, fontweight='bold')
-plt.xlabel('News Source', fontsize=16)
-plt.xticks(fontsize=16)
-plt.ylabel('Number of Articles', fontsize=16)
+plt.figure(figsize=(12, 6))
+harvard_data['source'].value_counts().plot(kind='bar', color='lightgreen', width=0.8)
+plt.title('News Source Distribution', fontsize=16, fontweight='bold')
+plt.xlabel('News Source', fontsize=14)
+plt.xticks(rotation=45, ha= 'right', fontsize=12)
+plt.ylabel('Number of Articles', fontsize=14)
 plt.tight_layout()
 plt.savefig('../plots/news_source_distribution.png')
 

@@ -70,3 +70,20 @@ class Database:
         Close the database connection.
         """
         self.connect.close()
+
+    def execute(self, query):
+        """
+        Execute a raw SQL query.
+
+        Parameters
+        ----------
+        query : str
+            The SQL query to execute.
+
+        Returns
+        -------
+        list of tuple
+            The result of the query.
+        """
+        self.cursor.execute(query)
+        return self.cursor.fetchall()
